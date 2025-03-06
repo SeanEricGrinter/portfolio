@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "background-static/background-static",
+  "version": "0.1.0",
+  "title": "Background Static",
+  "category": "design",
+  "icon": "layout",
+  "description": "A static element intended to be used as a container or fill",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "background-static",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

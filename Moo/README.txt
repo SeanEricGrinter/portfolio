@@ -48,3 +48,18 @@ My employer wanted to use my web dev skill to redesign his website.
 I find raw web dev fun. Filling out HTML structure and creating something from scratch is enjoyable. Hopefully Block Editor is not too far removed.
 
 Looking at Word Press Block Editor documentation is bringing back some core dev memories. I have to install Node! It's been a while since I've heard "nvm".
+
+I forgot how tedious setting up environments can be. You know it's getting serious when I need to put music on. Spotify and coffee must power 90% of the software industry.
+
+Post-Investigation 2:
+
+Environment is set up and I have a headache. I don't know why, but I seem to be cursed to have an absolute nightmare of a time creating any dev environment.
+
+WordPress seems cool! Some very smart person found a very nice way to solve a lot of the problems that we ran into at Yellowfin.
+
+I am guessing that instead of creating a bunch of divs and adding JS and CSS as needed to get what you want, now you can create a blocka s a plugin and re-use the same thing anywhere.
+Or even better, use everyone else's stuff and only create your own when you absolutely need to. Or perhaps you have an in-house library of plugins that you use?
+Library is a good word for it, it does remind me of C++ libraries - why make the same thing twice?
+
+I'm going to map out some blocks I might need to create a copy of Moo's website, and then see if there are any free plugins to do most of the work, and then I can get to the important part.
+Adding new functionality to that onHover for the cow splash image.

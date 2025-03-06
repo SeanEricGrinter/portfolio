@@ -1,0 +1,1 @@
+console.log("Hello World! (from background-static-background-static block)");
