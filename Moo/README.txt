@@ -1,6 +1,7 @@
 I will  use this to record my notes and thought rocess of how I would re-create moo.com.au
 
 These notes are intended to be a casual recording of my thought process, not necessarily professional, as I am not necessarily professional.
+Despite saying this I have gone back and edited my notes.
 
 I am not aiming to re-create the site exactly, but rather demonstrating how I would go about creating a site like this.
 
@@ -8,9 +9,9 @@ I have highlighted some key points in the job description, and have some things 
 
 Investigatables:
 
-Block Theme architechture - literally never heard of it, will need to Google.
-Word Press Block Editor - presumably related to Block Theme architechture. I will take a look at this after outlining my initial plan.
-HTML, JS, CSS, jQuery, PHP - Literally what I did for 3 years at Yellowfin, easy as. PHP I don't heaps of experience in, but syntax aside, programming is programming.
+Block Theme architechture - Literally never heard of it, will need to Google.
+Word Press Block Editor - Presumably related to Block Theme architechture. I will take a look at this after outlining my initial plan.
+HTML, JS, CSS, jQuery, PHP - What I did for 3 and a half years at Yellowfin, easy as. PHP I don't heaps of experience in, but syntax aside, programming is programming.
 3rd part APIs - I wrote like half of the Yellowfin REST API, so I think I'm good here.
 Responsive Websites - Seems rather vague. I noticed that Moo has what appear to be some sort of microservices implementation on the landing page, maybe this refers to that?
                     - Other than that I can only guess that it means you shouldn't be writing loops in loops in loops, which is just good fundamentals.
@@ -38,4 +39,12 @@ Add fancy things to show off what I can do.
 - I'm thinking there's probably a way to make a div adhere to a particular geometry, and I want to try and figure it out
 - Hopefully I don't get too distracted by this and actually apply for the job
 
-The Basic Plan does have some holes. I will research Block Theme and Word Press BLock Editor first.
+The Basic Plan does have some holes. I will research Block Theme and Word Press Block Editor first.
+
+Post-Investigation 1:
+Astoundingly, my time as a martial arts instructor was actually usefull to this project. I have actually used Black Themes before!
+My employer wanted to use my web dev skill to redesign his website.
+
+I find raw web dev fun. Filling out HTML structure and creating something from scratch is enjoyable. Hopefully Block Editor is not too far removed.
+
+Looking at Word Press Block Editor documentation is bringing back some core dev memories. I have to install Node! It's been a while since I've heard "nvm".
