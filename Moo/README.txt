@@ -148,3 +148,17 @@ I also wonder if I should be creating this in a theme. Moo may have created thei
 Need to set that aside for now, I've allowed myself to get distracted. How do I create a custom block that emulates some of the behaviour I can see on the Moo?
 
 Also I should take a break.
+
+Step 3:
+
+I have started writing a plugin to animate the typeing text on the Moo landing page. I am making decent progress, but the knowledge gaps are tripping me up.
+
+This is defeinitely what I would prefer to do, rather than design with the default wordpress canvas. This feels more familiar and I can understand what I'm doing and make some progress.
+
+Did googling get harder over the last 3 years? I feel like a lot of these problems I could have found a solution to much easier a decade ago.
+
+Omg I didn't start node. Every time.
+
+Now that I can actually code and debug I am having fun. I might finish up this plugin and then mock up some CSS for the website. I think making the entire website will ruin my weekend.
+
+I need to remember for next time that I looking to figure out how to add/render new elements to the WP editor using React. Sounds easy.

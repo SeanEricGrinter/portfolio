@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "typer-text/typer-text",
+	"version": "0.1.0",
+	"title": "typer Text",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Text that plays as a typing animation",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "typer-text",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
