@@ -72,3 +72,49 @@ I accidentlly deleted all my notes! Fortunately I am accustomed to making silly 
 files this way essentially erases their git history. But this is just for fun, so meh.
 
 I am now going to investigate what plugins I might need to re-create moo.com. Finally.
+
+Post Investigation 4:
+
+I may have misunderstood plugins! I believe the popular ones available to the general public are common dependencies that everyone probably uses, similar to something like Typescript or JQuery. You don't need to use JS with either, but it does make things way easier.
+
+I can see how it would also speed up development. I would imagine Moo probably uses a combination of publicly available plugins to save some time on the big stuff, and then relies on an internal library of plugins to get the rest of the job done.
+
+Seeing as I don't have access to those libraries, and I have no idea what the workflow would be like, I am goig to mock up some plugins that would make the Moo.com website as re-usable as possible.
+
+Public Plugins and Mockups 1:
+
+Elementor seems to be a good idea. It can create headers and footers (And potentially more, I haven't looked), and some one has already made it.
+
+Something to make navigation links.
+
+Something to make social links.
+
+Image containers for the header.
+
+Some static text elements for the majrirty of the page.
+
+An animated text. Seems to be actually adding and removing text.
+
+The chat bot/helper thingo.
+
+A table of links to various website/marketing stuff.
+
+Testimonials.
+
+Stylised columns of images.
+
+A carousal of clients.
+
+Blogs links.
+
+Da Plan:
+
+I wasn't going to inspect Moo.com, but it was too tempting. I am completely unfamiliar with their style of website design, so I am just going to go with what I know. I'm assuming that
+if I were to work for Moo they would give some kind of design document/style guide/dev guide that would instruct me on good vs bad practices.
+
+
+Step 1:
+
+Use Element to create a footer and a header.
+
+Block out every segment with divs.
