@@ -118,3 +118,33 @@ Step 1:
 Use Element to create a footer and a header.
 
 Block out every segment with divs.
+
+Step 1.1:
+
+That was a pain to figure out, but I now know how to install plugins on Local hosted wordpress site.
+
+Unfortunately all the nice stuff that Element offers cost MONEY. Am I old if I remember a world were useful features made by developers were free to be used by other developers? Oh well.
+
+I guess I do this the hard way.
+
+Step 2:
+
+The hard way is rather frustrating. I am not sure if this would be of any value for demonstrating my skills as a developer. The workflow for wordpress seems difficult to penetrate to a
+developer new to WP. I have mocked up some design on the Local site, and it seems promising. Adding some styles I am confident that I can achieve the website design that is similar to Moo.
+
+The issue is that this approaches the problem from a design angle. I don't really want to demonstrate that I can do design - I am just messing around with the WP canvas. I think it's valuable
+to understand the pain of designers, but not so great for showing off.
+
+I will switch to designing a plugin that allows me to add custom elements to the page in WP. That's probably super easy, right?
+
+Step 2.1:
+
+I've messed around with Element some more. The free editor is definitely WAY better than the WP editor, but it's stil very limiting. I'm certin there's some process/workflow that I'm missing.
+
+I'll need to investigate a better way to add styles.
+
+I also wonder if I should be creating this in a theme. Moo may have created their own theme and used that to design their site.
+
+Need to set that aside for now, I've allowed myself to get distracted. How do I create a custom block that emulates some of the behaviour I can see on the Moo?
+
+Also I should take a break.
