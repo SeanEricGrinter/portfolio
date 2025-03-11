@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function typer_text_typer_text_block_init() {
+function typer_text_block_init() {
 	register_block_type( __DIR__ . '/build/typer-text' );
 }
-add_action( 'init', 'typer_text_typer_text_block_init' );
+add_action( 'init', 'typer_text_block_init' );

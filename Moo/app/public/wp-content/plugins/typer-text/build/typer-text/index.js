@@ -8,7 +8,7 @@
   \***********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"typer-text/typer-text","version":"0.1.0","title":"typer Text","category":"widgets","icon":"smiley","description":"Text that plays as a typing animation","example":{},"supports":{"html":false},"textdomain":"typer-text","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"typer-text/typer-text","version":"0.1.0","title":"typer Text","category":"widgets","icon":"smiley","description":"Text that plays as a typing animation","example":{},"supports":{"html":false},"attributes":{"publicToken":{"type":"string"},"instanceId":{"type":"string"},"typerTexts":{"type":"array"}},"textdomain":"typer-text","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ }),
 
@@ -49,34 +49,51 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
+ * Get en element from within the iFrame
+ * 
+ * This is so wrong. Just read this as an MVP or something.
+ */
+
+var getJQueryFromIFrame = elementToGet => {
+  var editorIframe = jquery__WEBPACK_IMPORTED_MODULE_3___default()('iframe.edit-site-visual-editor__editor-canvas');
+  return editorIframe.contents().find(elementToGet);
+};
+
+/**
  * Dynamically creates our typerText elements.
  * 
  * Each typer will store text passed by the user which will be saved and used to populate the element in the view.
+ * 
+ * 
  */
-
-var createNewTyper = (attributes, blockProperties) => {
-  if (attributes.typerIndex === undefined) {
-    attributes.typerIndex = 1;
+var createNewTyper = (attributes, setAttributes, blockProperties) => {
+  if (attributes.typerTextCount === undefined) {
+    attributes.typerTextCount = 1;
   } else {
-    attributes.typerIndex++;
+    attributes.typerTextCount++;
   }
-  var typerTagName = 'typer' + attributes.typerIndex;
+  var typerTextInput = jquery__WEBPACK_IMPORTED_MODULE_3___default()('<input type=\'text\' id=' + attributes.typerTextCount + ' />');
+  typerTextInput.on('change', eventData => {
+    // Need to re-select the typerText
+    var typerText = getJQueryFromIFrame(eventData.currentTarget);
+    var idOfTyperText = typerText.attr('id');
+    var idAsInt = parseInt(idOfTyperText);
+    if (idAsInt === NaN) {
+      // Shouldn't happen but I'll chuck this is for sanity
+      console.error('Id of typerText ' + idOfTyperText + ' is NaN');
+    }
+    if (attributes.typerTextInputs === undefined) {
+      attributes.typerTextInputs = [];
+    }
 
-  // Return the new html for the typer
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    blockProperties: true,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.Text, {
-      tagName: typerTagName,
-      onChange: content => {
-        if (attributes.typer === undefined) {
-          attributes.typer = [];
-        }
-        attributes.typer[typerIndex] = content;
-        setAttributes(attributes);
-      },
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter text to be typed.', 'typer-text')
-    })
+    // Use the current typerTextCount - 1 as the index in the array to store the content
+    // Also this parseInt nonsense is so unsafe and should have handlers etc.
+    // Getting data to this point should have some event system that can pass the values I want more effectively
+    // I already know what this will be at this point, but I need to go and select again and get values, effectively using the DOM as a way to pass data around the JS - Not good!
+    attributes.typerTextInputs[idAsInt - 1] = typerText.val();
+    setAttributes(attributes);
   });
+  return typerTextInput;
 };
 
 /**
@@ -92,21 +109,30 @@ function Edit({
   setAttributes,
   classname
 }) {
-  var blockProperties = {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
+  var containerBlockProperties = {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
+      id: 'typersContainer'
+    })
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    id: "typerContainer",
+  var addNewTyperBlockProperties = {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
+      id: 'addNewTyper',
+      tagName: 'addNewTyper'
+    })
+  };
+  var typersContainer = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    containerBlockProperties: true,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      id: "addNewTyper",
-      tagName: "addNewTyper",
+      addNewTyperBlockProperties: true,
       onClick: () => {
-        var typer = createNewTyper(attributes, blockProperties);
-        jquery__WEBPACK_IMPORTED_MODULE_3___default()('typerContainer').append(typer);
+        var newTyper = createNewTyper(attributes, setAttributes, blockProperties);
+        var typersContainer = getJQueryFromIFrame('#typersContainer');
+        typersContainer.append(newTyper);
       },
       children: "+"
     })
   });
+  return typersContainer;
 }
 
 /***/ }),

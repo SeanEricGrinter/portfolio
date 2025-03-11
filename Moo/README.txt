@@ -162,3 +162,31 @@ Omg I didn't start node. Every time.
 Now that I can actually code and debug I am having fun. I might finish up this plugin and then mock up some CSS for the website. I think making the entire website will ruin my weekend.
 
 I need to remember for next time that I looking to figure out how to add/render new elements to the WP editor using React. Sounds easy.
+
+Step 4:
+
+I am going to figure out how to use React today. I will also take a deeper look into how to use themes, as it may be a good idea to change the base of my html from the theme.
+
+Ok that is definitely not that easy. Will probably need to take an actual course and more deeply understand how the whole pipeline of WP works before I go ahead and make a more
+educated decision about that.
+
+The job description on mentions jQuery, and I know jQuery. I will use jQuery for now and get the editor to appear as I would like.
+
+Might be worth adding a settings page that allows me to control some aspects of the Typer Text animations.
+
+I should also research what the view.js is actually used for. Is this what is seen on the client side? How do I pass the data to the view.js?
+
+Sometimes it's good to re-read documentation, and by sometimes I mean like once a day. Edit can set the attributes, and uses React to update how it looks. Save uses the attributes to
+generate some HTML. View renders the HTML(citation needed). This makes more sense to me.
+
+I have strayed from the path and attempted to render with React despite knowing that this would be unlikely given the short timeframe. I have been reminded that
+I should stay in my lane. Back to jQuery for now.
+
+Ok doing this with jQuery feels disgusting, but I do have this working. Some points:
+- I don't think this should be done with jQuery, it should be done with React
+- There needs to be a better way for me to pass information within the JS, rather than reading data from DOM element attributes
+
+I can put that aside for now however, and move on to seeing if I can pass this data from the Edit to the Save to the View
+
+Ok double take again. It really does seem like React + PHP is the way forwards here. It seems like I would need to use PHP to store any user entered data anyway, and the blocks are set up
+to use React. Makes me wonder where Moo uses jQuery.
