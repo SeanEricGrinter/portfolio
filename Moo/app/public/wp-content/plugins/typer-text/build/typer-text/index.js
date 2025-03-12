@@ -25,10 +25,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editor.scss */ "./src/typer-text/editor.scss");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery */ "jquery");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 /**
@@ -49,54 +49,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /**
- * Get en element from within the iFrame
- * 
- * This is so wrong. Just read this as an MVP or something.
- */
-
-var getJQueryFromIFrame = elementToGet => {
-  var editorIframe = jquery__WEBPACK_IMPORTED_MODULE_3___default()('iframe.edit-site-visual-editor__editor-canvas');
-  return editorIframe.contents().find(elementToGet);
-};
-
-/**
- * Dynamically creates our typerText elements.
- * 
- * Each typer will store text passed by the user which will be saved and used to populate the element in the view.
- * 
- * 
- */
-var createNewTyper = (attributes, setAttributes, blockProperties) => {
-  if (attributes.typerTextCount === undefined) {
-    attributes.typerTextCount = 1;
-  } else {
-    attributes.typerTextCount++;
-  }
-  var typerTextInput = jquery__WEBPACK_IMPORTED_MODULE_3___default()('<input type=\'text\' id=' + attributes.typerTextCount + ' />');
-  typerTextInput.on('change', eventData => {
-    // Need to re-select the typerText
-    var typerText = getJQueryFromIFrame(eventData.currentTarget);
-    var idOfTyperText = typerText.attr('id');
-    var idAsInt = parseInt(idOfTyperText);
-    if (idAsInt === NaN) {
-      // Shouldn't happen but I'll chuck this is for sanity
-      console.error('Id of typerText ' + idOfTyperText + ' is NaN');
-    }
-    if (attributes.typerTextInputs === undefined) {
-      attributes.typerTextInputs = [];
-    }
-
-    // Use the current typerTextCount - 1 as the index in the array to store the content
-    // Also this parseInt nonsense is so unsafe and should have handlers etc.
-    // Getting data to this point should have some event system that can pass the values I want more effectively
-    // I already know what this will be at this point, but I need to go and select again and get values, effectively using the DOM as a way to pass data around the JS - Not good!
-    attributes.typerTextInputs[idAsInt - 1] = typerText.val();
-    setAttributes(attributes);
-  });
-  return typerTextInput;
-};
-
-/**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
@@ -104,35 +56,45 @@ var createNewTyper = (attributes, setAttributes, blockProperties) => {
  *
  * @return {Element} Element to render.
  */
+
 function Edit({
   attributes,
   setAttributes,
   classname
 }) {
+  // The state of the typerTexts
+  const [typerTexts, setTyperTexts] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)([]);
+
+  // Add a new typerText to the state
+  const addTyperText = () => {
+    setTyperTexts(prev => [...prev, {
+      id: typerTexts.length,
+      textToType: ''
+    }]);
+  };
+
+  // Set the value of a typerText
+  const updateTyperText = params => {
+    var input = params.currentTarget;
+    typerTexts[input.getAttribute('id')].textToType = input.value;
+    setTyperTexts(typerTexts);
+  };
   var containerBlockProperties = {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)({
       id: 'typersContainer'
     })
   };
-  var addNewTyperBlockProperties = {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-      id: 'addNewTyper',
-      tagName: 'addNewTyper'
-    })
-  };
-  var typersContainer = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     containerBlockProperties: true,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       addNewTyperBlockProperties: true,
-      onClick: () => {
-        var newTyper = createNewTyper(attributes, setAttributes, blockProperties);
-        var typersContainer = getJQueryFromIFrame('#typersContainer');
-        typersContainer.append(newTyper);
-      },
-      children: "+"
-    })
+      onClick: addTyperText,
+      children: " + "
+    }), typerTexts.map(typerText => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+      id: typerText.id,
+      onChange: updateTyperText
+    }))]
   });
-  return typersContainer;
 }
 
 /***/ }),
@@ -276,6 +238,16 @@ module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = window["wp"]["element"];
+
+/***/ }),
+
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -283,16 +255,6 @@ module.exports = window["wp"]["blocks"];
 /***/ ((module) => {
 
 module.exports = window["wp"]["i18n"];
-
-/***/ }),
-
-/***/ "jquery":
-/*!*************************!*\
-  !*** external "jQuery" ***!
-  \*************************/
-/***/ ((module) => {
-
-module.exports = window["jQuery"];
 
 /***/ }),
 

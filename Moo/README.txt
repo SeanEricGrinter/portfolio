@@ -190,3 +190,11 @@ I can put that aside for now however, and move on to seeing if I can pass this d
 
 Ok double take again. It really does seem like React + PHP is the way forwards here. It seems like I would need to use PHP to store any user entered data anyway, and the blocks are set up
 to use React. Makes me wonder where Moo uses jQuery.
+
+Step 5:
+
+Reacting complete! Very happy with that.
+
+The React process is very intuitive when you get into the flow of it.
+
+Now I will need to figure out the Save step, and the View step, and we'll be well on the way.
