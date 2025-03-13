@@ -1,0 +1,10 @@
+/**
+* Theme Name: moocopy
+* Template: twentytwentyfive
+*/
+figure.top-left-splash img
+{
+    position: absolute;
+    top: -70px;
+    left: 0px;
+}

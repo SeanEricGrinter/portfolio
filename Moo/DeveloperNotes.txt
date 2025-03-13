@@ -198,3 +198,29 @@ Reacting complete! Very happy with that.
 The React process is very intuitive when you get into the flow of it.
 
 Now I will need to figure out the Save step, and the View step, and we'll be well on the way.
+
+Step 6:
+
+I called Moo today to get an idea of the closing date for the job offer, and they weren't sure! I might have to cut this project short.
+
+I was originally expecting too have 30ish days, but if the end point is indertiminate I wil have to reduce the size of the project and give the best I can with limited time.
+
+I think I will cut back on the size of the project to just include the top third or so of the Moo home page.
+
+As the Moo home page is segmented, this gives me clear goals to work towards. I can focus on working on each segment as I progress.
+
+First I think I should adress the base theme and complete styling the header. I will leave the typerText plugin for now as that belongs to section 2.
+
+I have stumbled on this a few days ago, but here it is again - I can't syle inside of the WordPres editor unless I pay for a premium subscription. This gives me a bit of a problem.
+
+I think I will have to implement some poor design choices to be able to apply custom CSS to the Moo Copy. I will add custom CSS to the base theme style.css. I know I shouldn't do this!
+
+A few pieces of Moo's website appear to be custom blocks. I will imitate as much of their website as I can with default blocks.
+
+There shouldn't be too many things that I cannot achieve with default blocks and CSS.
+
+I something looks complicated/dynamic/too out of the way to do in CSS, I will implement it in a custom block.
+
+I have discovered that this is bad as the CSS will not look right on anything except for the deployed site, at least as how I am implemeting it right now.
+
+It would be nice to use WordPress natively, but I am not paying money fo that feature. Editing CSS this way is easy enough.
