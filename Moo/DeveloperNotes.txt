@@ -223,4 +223,22 @@ I something looks complicated/dynamic/too out of the way to do in CSS, I will im
 
 I have discovered that this is bad as the CSS will not look right on anything except for the deployed site, at least as how I am implemeting it right now.
 
-It would be nice to use WordPress natively, but I am not paying money fo that feature. Editing CSS this way is easy enough.
+It would be nice to use WordPress natively, but I am not paying money for that feature. Editing CSS this way is easy enough.
+
+Step 7:
+
+I think a reasonable solution is to use a custom template. I have been looking for an excuse to use some PHP and this seems like a good solution to that issue as well.
+
+I have come across a lot of WordPress articles speaking about DRY. This is something that I very much identify with having started with C++
+
+I think I will break down the moo website into template parts and patterns. It looks like the official WordPress templates using PHP Patterns to define Parts, and to collect parts together to form
+more complex ideas, then using templates to structure final design for pages.
+
+I spent some time addng a Customizer menu so that the images wihtin the theme can be customised. I did this because I believe it makes sense to make my implementation as user friendly as I can.
+
+If I forced to use free features to achieve a similar result to Moo, then I believe the Customizer is the way to go. It will allow anyone using the custom Moo Copy theme to change any of the
+fancy images that Moo has on their website to their own, as well as set some of the theme colours.
+
+I am planning on adding some custom CSS settings to the Moo Copy Customizer which will help emulate a theme that is customisable by and end user.
+
+Also I hate how everything is spelled Freedom Style. I want localised names for features please.
