@@ -11,16 +11,24 @@
  * @since MooCopy 1.0
  */
 
+  // Includes
+  require_once(get_theme_file_path('includes/customizer_util.php'));
 ?>
+
 <!-- wp:group -->
-<div class="wp-block-group moocopy-header">
-	<!-- wp:group -->
-	<div class="wp-block-group header-splash">
-    <?php if ( get_theme_mod( 'header_splash' ) ): ?>
+<div class="wp-block-group moocopy-header" >
+	<div class="wp-block-group header-splash" >
         <a href="<?php echo esc_url( home_url( '/' )); ?>">
-            <img src="<?php echo esc_attr(get_theme_mod( 'header_splash' )); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
+            <?php
+                $customizer_util = new Customizer_Util();
+                $image_source = $customizer_util->get_customizer_option(Customizer_Util::$HEADER_SPLASH);
+            ?>
+            <?php
+                // Leaving this here so I can debug later if necessary
+                // echo '<div>' . $customizer_util->get_default(Customizer_Util::$HEADER_SPLASH) . '</div>'
+            ?>
+            <img class="moo-splash" src=" <?php echo esc_url($image_source) ?> " alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></img>
         </a>
     </div>
-    <!-- /wp:group -->
 </div>
 <!-- /wp:group -->

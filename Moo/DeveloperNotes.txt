@@ -242,3 +242,14 @@ fancy images that Moo has on their website to their own, as well as set some of 
 I am planning on adding some custom CSS settings to the Moo Copy Customizer which will help emulate a theme that is customisable by and end user.
 
 Also I hate how everything is spelled Freedom Style. I want localised names for features please.
+
+Step 8:
+
+I have sucessfully figured out how to add CSS to the editor, how to add custom images to the customizer, and now hace the base to start building out the theme to appear like Moo.com.
+
+That was a very productive day! What helped was how I broke down each piece of the process. I serperated out the bulk of the development into a new project to garuntee that any changes
+coming through were only from editing the template files.
+
+This gave me some peace of mind, and let me experiment more freely. It also drastically reduced the scope of potential bug sources.
+
+I am going to test my main MooCopy project now, and try to pretty up the header a bit.
