@@ -1,3 +1,57 @@
-img.moo-splash {
+.moocopy-header {
+    display: flex;
+    align-items: center;
+}
+
+/* All children should flex auto within the header to space evenly */
+.moocopy-header * {
+    flex: auto;
+}
+
+/* 
+ * First child should have margin away from the right to centre the flex content on the screen 
+ * Using high specificty as we don't won't the auto-generated editor classes having their styles adjusted.
+*/
+.moocopy-header figure.header-splash {
+    margin-left: 71%;
+    margin-right: 25%;
+}
+
+/* Last child should have margin away from the left to centre the flex content on the screen */
+.moocopy-header:last-child {
+    margin-right: 62%;
+}
+
+.moocopy-header figure {
+    display: flex;
+    align-items: center;
+}
+
+.moocopy-header figure,  .moocopy-header figure img {
+    max-width: fit-content;
+}
+
+.moocopy-header img.moo-splash {
     max-width: 200px;
+}
+
+.moocopy-header .header-link {
+    line-height: 42px;
+    margin-right: 50px;
+    color: var(--wp--preset--color--text-highlight-1);
+    font-weight: 800;
+}
+
+.moocopy-header figure.social-link:not(:first-child) {
+    margin-left: 5px;
+}
+
+.moocopy-header figure.social-link {
+    background: var(--wp--preset--color--text-base);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.moocopy-header figure.social-link img {
+    filter: invert(1);
 }

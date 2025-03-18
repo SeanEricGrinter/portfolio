@@ -225,6 +225,24 @@ opcache.enable_cli=1
 {{/unless}}
 
 [xdebug]
+
+{{! Enable remote debugging. }}
+xdebug.remote_enable=1
+
+{{! If enabled, the xdebug.remote_host setting is ignored and
+  Xdebug will try to connect to the client that made the HTTP request.
+  It checks the $_SERVER['HTTP_X_FORWARDED_FOR'] and $_SERVER['REMOTE_ADDR'] variables to find out remote IP }}
+xdebug.remote_connect_back=Off
+
+{{! Set the port that Xdebug connects to. }}
+xdebug.remote_port="9000"
+
+{{! Disable the profiler. }}
+xdebug.profiler_enable=0
+
+{{! Set the profiler's output directory for when we're profiling. }}
+xdebug.profiler_output_dir = "D:/Programming/portfolio/Moo/debug/xdebug-profiler-output"
+
 {{#if os.windows}}
 zend_extension = php_xdebug.dll
 {{else}}

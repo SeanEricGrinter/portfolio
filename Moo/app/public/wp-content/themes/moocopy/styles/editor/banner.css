@@ -1,0 +1,26 @@
+.moocopy-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* All children should flex auto within the header to space evenly */
+.moocopy-banner * {
+    flex: auto;
+}
+
+.moocopy-banner figure.top-left-decoration {
+    position: absolute;
+    top: -320px;
+    left: 0px;
+    max-width: 25%;
+}
+
+.moocopy-banner .banner-statement {
+    max-width: 35%;
+}
+
+.moocopy-banner figure.banner-splash {
+    max-width: 40%;
+    scale: 170%;
+}

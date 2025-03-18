@@ -1,0 +1,144 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "rgb(255, 253, 250)",
+					"name": "Background Base",
+					"slug": "background-base"
+				},
+				{
+					"color": "rgba(240, 234, 228, 0.63)",
+					"name": "Background Contrast",
+					"slug": "background-contrast"
+				},
+				{
+					"color": "rgb(22, 68, 69)",
+					"name": "Text Base",
+					"slug": "text-base"
+				},
+				{
+					"color": "rgb(10, 141, 98)",
+					"name": "Text Highlight 1",
+					"slug": "text-highlight-1"
+				},
+				{
+					"color": "rgb(250, 189, 181)",
+					"name": "Text Highlight 2",
+					"slug": "text-highlight-2"
+				},
+				{
+					"color": "rgb(239, 233, 226)",
+					"name": "Text Highlight 3",
+					"slug": "text-highlight-3"
+				}
+			]
+		},
+		"typography": {
+			"writingMode": true,
+			"defaultFontSizes": false,
+			"fluid": true,
+			"fontSizes": [
+				{
+					"fluid": false,
+					"name": "Small",
+					"size": "14px",
+					"slug": "small"
+				},
+				{
+					"fluid": false,
+					"name": "Medium",
+					"size": "16px",
+					"slug": "medium"
+				},
+				{
+					"fluid": false,
+					"name": "Medium Large",
+					"size": "18px",
+					"slug": "medium-large"
+				},
+				{
+					"fluid": false,
+					"name": "Large",
+					"size": "30px",
+					"slug": "large"
+				},
+				{
+					"fluid": false,
+					"name": "Extra Large",
+					"size": "32px",
+					"slug": "x-large"
+				},
+				{
+					"fluid": false,
+					"name": "Extra Extra Large",
+					"size": "36px",
+					"slug": "xx-large"
+				}
+			],
+			"fontFamilies": [
+				{
+					"name": "Work Sans",
+					"slug": "work-sans",
+					"fontFamily": "Work Sans",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/work-sans/WorkSans-Regular-VariableFont_wght.woff2"
+							],
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontFamily": "Work Sans"
+						}
+					]
+				},
+				{
+					"name": "Plus Jakarta Sans",
+					"slug": "plus-jakarta-sans",
+					"fontFamily": "Plus Jakarta Sans",
+					"fontFace": [
+						{
+							"src": [
+								"file:./assets/fonts/plus-jakarta-sans/PlusJakartaSans-Regular-VariableFont_wght.woff2"
+							],
+							"fontWeight": "600 700 800",
+							"fontStyle": "normal",
+							"fontFamily": "Plus Jakarta Sans"
+						}
+					]
+				}
+			]
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|background-base",
+			"text": "var:preset|color|text-base"
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|work-sans",
+			"fontSize": "var:preset|font-size|medium",
+			"fontWeight": "400",
+			"lineHeight": "25.6"
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header",
+			"title": "Header"
+		},
+		{
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		}
+	]
+}

@@ -253,3 +253,15 @@ coming through were only from editing the template files.
 This gave me some peace of mind, and let me experiment more freely. It also drastically reduced the scope of potential bug sources.
 
 I am going to test my main MooCopy project now, and try to pretty up the header a bit.
+
+Step 9:
+
+There is an inconsistency between the header php "post" content and what WordPress is detecting as it's "save" content. This seems to be a bit more of a deep issue, and is something I
+plan to resolve later. For now it is much more important that I get a working website to interact with.
+
+I can't use WordPress custom fonts without paying, so I will have to find a workaround for now.
+
+I need to added some classes to my CSS that will prevent the need to apply certain colours and styles to remain DRY. I will need to figure out how to add my custom typerText block
+to my template - barring that, at least get it working on the production site.
+
+Quite a bit of styling needs to be done also.
