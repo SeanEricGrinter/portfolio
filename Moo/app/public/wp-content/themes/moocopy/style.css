@@ -5,11 +5,44 @@
 * Text Domain moocopy
 */
 
+/* Common styles across all elements */
+
+.background-contrast-base {
+    background: var(--wp--preset--color--contrast-base);
+}
+
+.text-contrast-1 {
+    color: var(--wp--preset--color--contrast-1);
+}
+
+.text-contrast-3 {
+    color: var(--wp--preset--color--contrast-3);
+}
+
+.font-plus-jakarta-sans {
+    font-family: "Plus Jakarta Sans";
+}
+
+.clamped-font-small {
+    font-size: clamp(0.901rem, calc(0.901rem + ((1vw - 0.2rem) * 0.909)), 1.35rem);
+}
+
+.clamped-font-medium {
+    font-size: clamp(1.25rem, calc(1.25rem + ((1vw - 0.2rem) * 1.519)), 2rem);
+}
+
+.clamped-font-large {
+    font-size: clamp(1.802rem, calc(1.802rem + ((1vw - 0.2rem) * 2.679)), 3.125rem);
+}
+
 /* Header */
+
 
 .moocopy-header {
     display: flex;
     align-items: center;
+    margin-left: 28%;
+    margin-right: 19%;
 }
 
 /* All children should flex auto within the header to space evenly */
@@ -17,48 +50,45 @@
     flex: auto;
 }
 
-/* 
- * First child should have margin away from the right to centre the flex content on the screen 
- * Using high specificty as we don't won't the auto-generated editor classes having their styles adjusted.
-*/
-.moocopy-header figure img.moo-splash {
-    margin-left: 700px;
-}
-
-/* Last child should have margin away from the left to centre the flex content on the screen */
-.moocopy-header:last-child {
-    margin-right: 700px;
-}
-
 .moocopy-header figure {
     display: flex;
     align-items: center;
 }
 
-.moocopy-header figure,  .moocopy-header figure img {
+.moocopy-header figure {
     max-width: fit-content;
 }
 
-.moocopy-header img.moo-splash {
+.moocopy-header figure.header-splash img {
     max-width: 200px;
-    margin-right: 250px;
+}
+
+.moocopy-header .links-container {
+    display: flex;
+    margin-block-start: 0;
+    max-width: 65%;
+}
+
+.moocopy-header .links-container div.marketing-link {
+    margin-left: 25%;
 }
 
 .moocopy-header .header-link {
     line-height: 42px;
     margin-right: 50px;
-    color: var(--wp--preset--color--text-highlight-1);
     font-weight: 800;
+    max-width: fit-content;
+    margin-block-start: 0;
 }
 
-.moocopy-header figure.social-link:not(:first-child) {
+.moocopy-header figure.social-link.header-linkedin {
     margin-left: 5px;
 }
 
 .moocopy-header figure.social-link {
-    background: var(--wp--preset--color--text-base);
     border-radius: 50%;
     padding: 5px;
+    margin-block-start: 0;
 }
 
 .moocopy-header figure.social-link img {
@@ -67,9 +97,75 @@
 
 /* Banner Styling */
 
-figure.top-left-decoration img
-{
+div.moocopy-banner.container {
+    display: flex;
+    justify-content: space-between;
+    height: 30vw;
+    overflow-x: clip;
+}
+
+.moocopy-banner.container * {
+    margin-block-start: 0;
+}
+
+/* All children should flex auto within the header to space evenly */
+.moocopy-banner.container * {
+    flex: auto;
+}
+
+.moocopy-banner.container figure.top-left-decoration {
     position: absolute;
-    top: -70px;
+    top: -320px;
     left: 0px;
+}
+
+.moocopy-banner.container .banner-statement {
+    margin-left: 29%;
+    font-weight: 800;
+    font-size: 50px;
+    max-width: 26%;
+    line-height: 1.2;
+    word-spacing: 1px;
+    font-family: "Plus Jakarta Sans";
+    margin-block-start: 0;
+}
+
+.moocopy-banner.container .banner-mask {
+    max-width: 35%;
+    scale: 200%;
+    /* This is so yuck but whatever */
+    z-index: -1;
+    top: 9vw;
+    left: 5vw;
+    position: relative;
+    /* Will this break on any other machine? Probably. I think if anyone changes the name of the site this will not work. */
+    mask: url(http://moocopycomau.local/wp-content/themes/moocopy/assets/images/main_banner_mask_cropped.svg);    
+    mask-repeat: no-repeat;
+    margin-block-start: 0;
+}
+
+/* Welcome styling */
+
+.moocopy-welcome.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 354px;
+    /* Must keep, otherwise inherits parent line height of 25.6 */
+    line-height: normal;
+    margin-block-start: 0;
+}
+
+.moocopy-welcome.container > * {
+    height: 25%;
+    margin-block-start: 0;
+}
+
+.moocopy-welcome.container > :first-child {
+    margin-top: 72px;
+}
+
+.moocopy-welcome .typer-text {
+    margin-top: 34px;
 }

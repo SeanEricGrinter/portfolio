@@ -1,3 +1,3 @@
-$('figure img.moo-splash').on('click', (url) => {
+$('figure figure.header-splash').on('click', (url) => {
     window.location.href = url
 })

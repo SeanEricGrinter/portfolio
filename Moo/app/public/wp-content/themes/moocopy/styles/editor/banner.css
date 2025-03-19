@@ -1,26 +1,42 @@
-.moocopy-banner {
+div.moocopy-banner.container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    height: 30vw;
+}
+
+.moocopy-banner.container * {
+    margin-block-start: 0;
 }
 
 /* All children should flex auto within the header to space evenly */
-.moocopy-banner * {
+.moocopy-banner.container * {
     flex: auto;
 }
 
-.moocopy-banner figure.top-left-decoration {
+.moocopy-banner.container figure.top-left-decoration {
     position: absolute;
     top: -320px;
     left: 0px;
-    max-width: 25%;
 }
 
-.moocopy-banner .banner-statement {
+.moocopy-banner.container .banner-statement {
+    margin-left: 29%;
+    font-weight: 800;
+    font-size: 50px;
+    max-width: 26%;
+    line-height: 1.2;
+    word-spacing: 1px;
+    font-family: "Plus Jakarta Sans";
+    margin-block-start: 0;
+}
+
+.moocopy-banner.container .banner-mask {
     max-width: 35%;
-}
-
-.moocopy-banner figure.banner-splash {
-    max-width: 40%;
-    scale: 170%;
+    scale: 200%;
+    top: 12vw;
+    left: 5vw;
+    position: relative;
+    mask: url('../../assets/images/main_banner_mask_cropped.svg');
+    mask-repeat: no-repeat;
+    margin-block-start: 0;
 }

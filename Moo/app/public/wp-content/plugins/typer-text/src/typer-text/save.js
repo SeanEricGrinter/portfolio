@@ -15,10 +15,14 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save({attributes, innerBlocks}) {
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'typer Text – hello from the saved content!' }
-		</p>
+		<div { ...useBlockProps.save() }>
+			{attributes.typerTexts.map((typerText) => {
+				<p id={typerText.id} class="typer-text">
+					typerText.textToType
+				</p>
+			})}
+		</div>
 	);
 }

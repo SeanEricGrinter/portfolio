@@ -265,3 +265,11 @@ I need to added some classes to my CSS that will prevent the need to apply certa
 to my template - barring that, at least get it working on the production site.
 
 Quite a bit of styling needs to be done also.
+
+Step 10:
+
+Ok THAT was a big day.
+
+I did not get to do everything I wanted, and I think if I had more time the results would be much more impressive. I got so close!
+
+It was fun anyway.

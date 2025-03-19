@@ -1,0 +1,29 @@
+/* Common styles across all elements */
+
+.background-contrast-base {
+    background: var(--wp--preset--color--contrast-base);
+}
+
+.text-contrast-1 {
+    color: var(--wp--preset--color--contrast-1);
+}
+
+.text-contrast-3 {
+    color: var(--wp--preset--color--contrast-3);
+}
+
+.font-plus-jakarta-sans {
+    font-family: "Plus Jakarta Sans";
+}
+
+.clamped-font-small {
+    font-size: clamp(0.901rem, calc(0.901rem + ((1vw - 0.2rem) * 0.909)), 1.35rem);
+}
+
+.clamped-font-medium {
+    font-size: clamp(1.25rem, calc(1.25rem + ((1vw - 0.2rem) * 1.519)), 2rem);
+}
+
+.clamped-font-large {
+    font-size: clamp(1.802rem, calc(1.802rem + ((1vw - 0.2rem) * 2.679)), 3.125rem);
+}

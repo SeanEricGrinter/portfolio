@@ -1,0 +1,23 @@
+.moocopy-welcome.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 354px;
+    /* Must keep, otherwise inherits parent line height of 25.6 */
+    line-height: normal;
+    margin-block-start: 0;
+}
+
+.moocopy-welcome.container > * {
+    height: 25%;
+    margin-block-start: 0;
+}
+
+.moocopy-welcome.container > :first-child {
+    margin-top: 72px;
+}
+
+.moocopy-welcome .typer-text {
+    margin-top: 34px;
+}

@@ -20,23 +20,23 @@
 				},
 				{
 					"color": "rgb(22, 68, 69)",
-					"name": "Text Base",
-					"slug": "text-base"
+					"name": "Contrast Base",
+					"slug": "contrast-base"
 				},
 				{
 					"color": "rgb(10, 141, 98)",
-					"name": "Text Highlight 1",
-					"slug": "text-highlight-1"
+					"name": "Contrast 1",
+					"slug": "contrast-1"
 				},
 				{
 					"color": "rgb(250, 189, 181)",
-					"name": "Text Highlight 2",
-					"slug": "text-highlight-2"
+					"name": "Contrast 2",
+					"slug": "contrast-2"
 				},
 				{
 					"color": "rgb(239, 233, 226)",
-					"name": "Text Highlight 3",
-					"slug": "text-highlight-3"
+					"name": "Contrast 3",
+					"slug": "contrast-3"
 				}
 			]
 		},
@@ -107,7 +107,7 @@
 							"src": [
 								"file:./assets/fonts/plus-jakarta-sans/PlusJakartaSans-Regular-VariableFont_wght.woff2"
 							],
-							"fontWeight": "600 700 800",
+							"fontWeight": "600 700 800 900",
 							"fontStyle": "normal",
 							"fontFamily": "Plus Jakarta Sans"
 						}
@@ -120,7 +120,7 @@
 	"styles": {
 		"color": {
 			"background": "var:preset|color|background-base",
-			"text": "var:preset|color|text-base"
+			"text": "var:preset|color|contrast-base"
 		},
 		"typography": {
 			"fontFamily": "var:preset|font-family|work-sans",

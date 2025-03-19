@@ -12,6 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+import { Button } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 import { useBlockProps } from '@wordpress/block-editor';
 
@@ -27,6 +28,7 @@ export default function Edit({attributes, setAttributes, classname}) {
 	// The state of the typerTexts
 	const [typerTexts, setTyperTexts] = useState([])
 
+
 	// Add a new typerText to the state
 	const addTyperText = () => {
 		setTyperTexts(prev => [...prev, {id: typerTexts.length, textToType: ''}])
@@ -38,14 +40,18 @@ export default function Edit({attributes, setAttributes, classname}) {
 
 		typerTexts[input.getAttribute('id')].textToType = input.value
 		setTyperTexts(typerTexts)
+		
+		// Add typer texts to the attributes
+		setAttributes({ typerTexts: typerTexts })
 	}
 
 	var containerBlockProperties = { ...useBlockProps({
 		id: 'typersContainer'
 	}) }
 
-	return (<div containerBlockProperties>
-				<div addNewTyperBlockProperties	onClick={addTyperText}> + </div>
-				{typerTexts.map(typerText => <input id={typerText.id} onChange={updateTyperText}/>)}
-			</div>);
+	return (
+		<div containerBlockProperties>
+			<Button variant="primary" addNewTyperBlockProperties onClick={addTyperText}> Add New Text to Type </Button>
+			{typerTexts.map(typerText => <input id={typerText.id} onChange={updateTyperText}/>)}
+		</div>);
 }
